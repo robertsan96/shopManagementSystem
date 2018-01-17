@@ -1,0 +1,40 @@
+{
+    // Python specific
+    "python.pythonPath": "/Users/facode/virtualenvs/sms/bin/python",
+    // "python.pythonPath": "/home/andrei/virtualenvs/bimob-api/bin/python",
+    "python.devOptions": [
+        "DEBUG"
+    ],
+
+    // Linters
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pep8Enabled": false,
+
+    // UnitTests
+    // "python.unitTest.unittestEnabled": true,
+    // "python.unitTest.pyTestEnabled": true,
+    // "python.unitTest.nosetestsEnabled": false,
+
+    // Django
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+    
+    // Extension and editor preferences
+    "files.insertFinalNewline": true,
+
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "editor.rulers": [
+        79
+    ],
+    "editor.renderWhitespace": "all",
+    "editor.roundedSelection": false,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true
+    }
+}

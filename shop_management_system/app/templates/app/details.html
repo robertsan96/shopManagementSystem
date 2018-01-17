@@ -1,0 +1,54 @@
+
+
+{% extends "app/base.html" %}
+{% load static %}
+{% load tz %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row" style="padding-top:50px;padding-bottom:50px;">
+
+        <div class="col-lg-3">
+            {% include "app/sidebar.html" %}
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+            <div class="row">
+                <!-- Title -->
+                <h1 class="mt-4">{{ item.name }}</h1>
+                <hr>
+                <!-- Date/Time -->
+                <p>Posted on {{ item.created_at | timezone:"Europe/Bucharest" }}</p>
+                <hr>
+                <!-- Preview Image -->
+                {% if item.image %}
+                <img class="img-fluid rounded" src="{{item.image.url}}" alt="" style="height: 350px;">
+                {% else %}
+                <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="" style="height: 350px;">
+                {% endif %}
+            
+                <hr>
+            
+                <!-- Post Content -->
+                <div class="col-md-12">
+                    <h5>Category: {{ item.category.name }}</h5>
+                    <p class="lead">{{ item.short_description }}</p>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+{% endblock content %}

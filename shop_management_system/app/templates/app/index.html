@@ -1,0 +1,50 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row" style="padding-top:50px;padding-bottom:50px;">
+
+        <div class="col-lg-3">
+            {% include "app/sidebar.html" %}
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+            <div class="row">
+                {% for item in items %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        {% if item.image %}
+                        <a href="#"><img class="card-img-top" src="{{item.image.url}}" alt=""></a>
+                        {% else %}
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="card-title">
+                            <a href="/details/{{item.id}}">{{ item.name }}</a>
+                            </h4>
+                            <h5>${{ item.price }}</h5>
+                            <p class="card-text">{{ item.short_description }}</p>
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+{% endblock content %}
